@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3 { @apply font-display; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-primary; }
+}
+
+@layer components {
+  /* Boton tactil grande, pensado para usarse con guantes en el patio */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold
+           transition active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .btn-primary { @apply btn bg-primary text-white hover:bg-primary-dark; }
+  .btn-secondary { @apply btn bg-white text-primary border border-primary/30 hover:bg-primary-light; }
+  .btn-ghost { @apply btn text-muted hover:bg-black/5; }
+
+  .card { @apply bg-surface rounded-2xl border border-black/5 shadow-sm; }
+
+  .input {
+    @apply w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-base
+           focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none;
+  }
+}
